@@ -1,0 +1,35 @@
+{{name}}
+<form class="new-form stacked-form" method="post" action="/">
+	<div class="page-container active" id="form-page-1">
+		<div class="section">
+			<ul class="prop-list">
+				{{#each props}}
+				<li>
+					<a href="#"><span class="icon"></span></a>
+					<span class="title">{{this}}</span>
+				</li>
+				{{/each}}
+			</ul>
+			<input id="prop-input" type="hidden" name="entry[prop]" value='0'>
+		</div>
+	</div>
+	<div class="page-container" id='form-page-2'>
+		<div class="section">
+			<label for="employee-input">To</label>
+			<select data-placeholder="Pick your SAYer" multiple class="chzn-select" name="entry[to]" id="employee-input">
+				<option value=""></option>
+				{{#each employees}}
+	     		<option value="{{screen_name}}" style="background: url('/images/photo-overlay.png'), url('{{profile_image_url}}') no-repeat">{{name}}
+	     		</option>
+	     	{{/each }}
+	    </select>
+	   </div>
+	   <div class="section">
+	   	<label for="body">For doing...</label>
+	   	<textarea name="entry[body]" id="body-input"></textarea>
+	   </div>
+	   <div class="section">
+	   	<input type="submit" class="button" value="Send Props">
+	   </div>
+	</div>
+</form>
